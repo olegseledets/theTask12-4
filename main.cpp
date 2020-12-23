@@ -5,16 +5,20 @@ int main() {
   int stringCounter = 0;
   std::cout << "Введите строку:\n";
   std::getline(std::cin, userText);
-  if (userText[0] != ' ' && userText.length() > 0) {
-    stringCounter++;
+  if (userText == ""){
+    std::cout << "Вы не ввели данные!\n";
   }
-  for (int i = 1; i < userText.length(); ++i){
-    if(userText[i] != ' ' && userText[i-1] == ' '){
+  else{
+    if (userText[0] != ' ' && userText.length() > 0) {
       stringCounter++;
     }
+    for (int i = 1; i < userText.length(); ++i){
+      if(userText[i] != ' ' && userText[i-1] == ' '){
+        stringCounter++;
+      }
+    }
+    std::cout << "Ответ: " << stringCounter << "\n";
   }
-  std::cout << "Ответ: " << stringCounter << "\n";
-
 }
 
 /*
